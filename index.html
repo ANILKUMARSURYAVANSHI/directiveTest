@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="machineApp">
+	<head>
+
+		<meta charset="utf-8">
+		 <base href=" "/>
+		<link rel="stylesheet" type="text/css" href="style/main.css">
+		<link rel="stylesheet" type="text/css" href="style/bootstrap.min.css">
+
+		<title ng-bind="title">Angular Machine Test</title>
+		
+		
+		
+		
+	</head>
+
+
+	<body data-ng-controller="mainCntrl">
+		<div class="loaderDiv" ng-hide="loader">
+			<img src="images/loading-image.gif" class="loaderImage" />
+		</div>
+
+				
+		<div  class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		
+		<div class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
+		</div>
+		<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+		<div class="container-fluid" >
+
+		
+
+
+			<div class="row">
+				
+				<div >
+					<div ng-include="'html/header.html'"  ></div>
+					<div ng-view ></div>
+					<div ng-include="'html/footer.html'"  ></div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
+		</div>
+		</div>
+
+
+
+		<!-- Lib  -->	
+		<script type="text/javascript" src="lib/angular.min.js"></script>
+		<script type="text/javascript" src="lib/angular-route.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+		<!-- Common File and app file  -->		
+		<script type="text/javascript" src="app.js"></script>
+
+
+		<!-- Controllers -->
+
+		<script type="text/javascript" src="controller/mainCntrl.js"></script>
+		<script type="text/javascript" src="controller/landCntrl.js"></script>
+		<script type="text/javascript" src="controller/postCntrl.js"></script>
+
+		<!-- service -->
+		<script type="text/javascript" src="common/commonValidation.js"></script>
+		<script type="text/javascript" src="common/config.js"></script>
+		<script src="services/commonService.js"></script>
+		
+		<!-- directive -->
+		<script type="text/javascript" src="directive.js"></script>
+
+	</body>
+</html>

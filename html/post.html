@@ -1,0 +1,85 @@
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-init="load();" style="
+    padding-top: 100px;
+">
+ 
+
+<div class="clearfix"></div>
+
+<div class="alert alert-danger" role="alert" ng-show="isError">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  <span class="sr-only">Error:</span>
+  Fill complete form
+</div>
+
+<form id="newData" name="newData" role="form" novalidate>
+<fieldset   ng-disabled="formDisableBool" >
+	<legend>Post Angular testTitle or Body Test Machine</legend>
+
+
+<div class="form-group" ng-class="{ 'has-error' : newData.title.$invalid && ! newData.title.$pristine }">
+    <label for="Title">Title:</label>
+    <input type="text" class="form-control" id="title" name="title" ng-model="sent.title" ng-pattern="/^[A-Za-z0-9][A-Za-z0-9\-\/\.\ ]*$/" maxlength="50">
+      <span style="color:red" ng-show="newData.title.$dirty && newData.title.$invalid"> <span ng-show="newData.title.$error.pattern"><EM></EM>Please enter title in Alphanumeric.</span> <span ng-show="newData.title.$error.maxlength"><EM></EM>Please don't enter character more than 50.</span>  </span>
+  </div>
+  <div class="alert alert-danger" role="alert" ng-show="titleError">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  <span class="sr-only">Error:</span>
+ Please enter the data 
+</div>
+  <div class="form-group"  ng-class="{ 'has-error' : newData.body.$invalid && ! newData.body.$pristine }">
+    <label for="body">Body:</label>
+   
+      <textarea class="form-control" rows="5" name="body" id="body" ng-model="sent.body" ng-pattern="/^[A-Za-z0-9][A-Za-z0-9\-\/\.\ ]*$/"  maxlength="100" ></textarea>
+         <span style="color:red" ng-show="newData.body.$dirty && newData.body.$invalid"> <span ng-show="newData.body.$error.pattern"><EM></EM>Please enter title in Alphanumeric.</span><span ng-show="newData.body.$error.maxlength"><EM></EM>Please don't enter character more than 100.</span>  </span>
+  </div>
+  <div class="alert alert-danger" role="alert" ng-show="bodyError">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  <span class="sr-only">Error:</span>
+  Please enter the data 
+</div>
+	</fieldset>
+</form>
+<div >
+
+
+<br>
+
+<div class="pull-right">
+	<button class="btn btn-primary btn-lg " ng-disabled="formDisableBool" ng-click="submitdata();">Submit</button>
+</div>
+
+
+<br>
+<div ng-show="formDisableBool">
+<legend> Click to Reset and Submit New record</legend>
+<div class="pull-left">
+	<button class="btn btn-primary btn-lg "  ng-click="reset();">RESET</button>
+</div>
+	
+</div>
+
+</div>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header alert alert-info">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Info </h4>
+      </div>
+      <div class="modal-body alert alert-success">
+        <p>Data submitted successfully.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+</div>
