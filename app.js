@@ -23,6 +23,10 @@ app.config(function( $routeProvider , $locationProvider) {
 		templateUrl : 'html/landing.html',
 		controller : 'landCntrl',
 		title : "Welcome to Test"
+	}).when('/oneway', {
+		templateUrl : 'html/oneway.html',
+		controller : 'onewayCntrl',
+		title : "One way Data Binding Directive"
 	}).otherwise({
 		redirectTo : '/'
 	});

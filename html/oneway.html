@@ -1,0 +1,39 @@
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-init="load();" style="
+    padding-top: 100px;
+">
+ 
+
+<div class="clearfix"></div>
+
+
+
+<form id="newData" name="newData" role="form" novalidate>
+	<legend>Post Angular testTitle or Body Test Machine</legend>
+
+
+<div class="form-group" ng-class="{ 'has-error' : newData.title.$invalid && ! newData.title.$pristine }">
+    <label for="Title">Title:</label>
+    Employee Details : {{emp1Details}} <br>
+
+     <emp-detail-twoway emp="emp1Details"></emp-detail-twoway>
+      Employee Details : {{emp2Details}} <br>
+        <emp-detail-oneway emp="emp2Details"></emp-detail-oneway>
+  </div>
+  
+  
+</form>
+<div>
+
+
+<br>
+
+<div class="pull-right">
+	<button class="btn btn-primary btn-lg " ng-disabled="formDisableBool" ng-click="submitdata();">Submit</button>
+</div>
+
+
+
+</div>
+
+
+</div>
